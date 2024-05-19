@@ -1,0 +1,3 @@
+<?php  ?>
+
+<svg class="w-px-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 292.59 48.62"><defs><style>.cls-1{font-size:40.52px;fill:#404e4f;font-family:Jost-Black, Jost;font-weight:800;}.cls-2{letter-spacing:-0.01em;}.cls-3{fill:#a27b5c;}.cls-4{fill:#dfbf96;}</style></defs><g id="Layer_2" data-name="Layer 2"><g id="logo_cerah" data-name="logo cerah"><text class="cls-1" transform="translate(0 34.44)">INVOITE<tspan class="cls-3" x="178.08" y="0">.</tspan><tspan class="cls-4" x="191.7" y="0">COM</tspan></text></g></g></svg>

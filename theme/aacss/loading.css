@@ -1,0 +1,115 @@
+.loading svg {
+    width: 100px;
+}
+
+/* .loading svg .cls-1a {
+  animation: cls1 1s ease-in-out infinite;
+} */
+
+.loading__1 {
+    --clr: #a27b5c;
+    transform-origin: center;
+    fill: transparent;
+    stroke: var(--clr);
+    stroke-width: 10;
+
+    stroke-dasharray: 895;
+    stroke-dashoffset: 895;
+
+    animation: cls1 2.5s 0.25s ease infinite alternate backwards;
+}
+
+@keyframes cls1 {
+    0% {
+        stroke-dashoffset: 895;
+        transform: scale(0.9);
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+        transform: scale(0.9);
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+}
+
+.loading__2 {
+    --clr: #2c3639;
+    transform-origin: center;
+    fill: transparent;
+    stroke: var(--clr);
+    stroke-width: 10;
+
+    stroke-dasharray: 825;
+    stroke-dashoffset: 825;
+
+    animation: cls2 2.5s 0.15s ease infinite alternate backwards;
+}
+
+@keyframes cls2 {
+    0% {
+        stroke-dashoffset: 825;
+        transform: scale(0.9);
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+        transform: scale(0.9);
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+}
+
+.loading__3 {
+    --clr: #dcd7c9;
+    transform-origin: center;
+    fill: transparent;
+    stroke: var(--clr);
+    stroke-width: 10;
+
+    stroke-dasharray: 665;
+    stroke-dashoffset: 665;
+
+    animation: cls3 2.5s ease infinite alternate backwards;
+}
+
+@keyframes cls3 {
+    0% {
+        stroke-dashoffset: 665;
+        transform: scale(0.9);
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+        transform: scale(0.9);
+    }
+
+    80% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--clr);
+    }
+}

@@ -1,0 +1,37 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+#main {
+    background-color: #eee;
+    position: relative;
+
+    .nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 3rem;
+        background-color: #ddd;
+
+        .swiper-slide {
+        }
+    }
+}
+
+.mobile-preview {
+    height: calc(100% - 10px);
+    max-width: 414px !important;
+    overflow: hidden;
+}
