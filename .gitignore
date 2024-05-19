@@ -67,6 +67,3 @@ dari/
 .well-known/
 cgi-bin/
 .ftpquota
-
-#conection database
-conn.php
