@@ -235,7 +235,7 @@ class LightBox {
     }
 }
 
-var lightboxes = [new LightBox("gallery1"), new LightBox("gallery2"), new LightBox("photo1"), new LightBox("photo2")];
+const lightboxes = [new LightBox("gallery1"), new LightBox("gallery2"), new LightBox("photo1"), new LightBox("photo2")];
 
 // invitation
 openInvitation = (target) => {

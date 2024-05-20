@@ -1,0 +1,160 @@
+/* External fonts */
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    *,
+    *::after,
+    *::before {
+        @apply box-border font-[inherit];
+    }
+
+    body {
+        @apply m-0 p-0 min-h-[100dvh] overflow-x-hidden;
+    }
+
+    #app {
+        @apply m-0 p-0;
+    }
+
+    .section {
+        @apply p-4;
+    }
+
+    .full-view {
+        @apply w-full min-h-[100vh] overflow-x-hidden max-w-full;
+    }
+
+    .btn {
+        @apply outline-none px-8 py-2 cursor-pointer transition-all;
+    }
+
+    .btn-round {
+        @apply rounded-full overflow-hidden;
+    }
+
+    .container {
+        @apply max-w-[min(70rem,100vw)] mx-auto overflow-hidden;
+    }
+}
+
+/* woi jawir */
+body:not(.open) :where(section, footer):not(#cover) {
+    display: none !important;
+    pointer-events: none;
+}
+
+html,
+body,
+#main {
+    scroll-behavior: smooth;
+}
+
+/* Internal fonts */
+@font-face {
+    font-family: "Modernline";
+    font-display: swap;
+    src: url(assets/fonts/modernline.woff) format("woff");
+}
+
+@font-face {
+    font-family: "Greenlight";
+    font-display: swap;
+    src: url(assets/fonts/Greenlight.woff) format("woff");
+}
+
+/* * {
+    outline: 2px solid red;
+} */
+
+/* Lightbox */
+.lightbox {
+    cursor: pointer;
+}
+
+.lightbox-wrapper {
+    max-width: var(--max-width);
+    margin: auto;
+    z-index: 9999;
+}
+
+.lightbox-wrapper.show {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
+.lightbox-inner,
+.lightbox-list {
+    height: 100%;
+    width: 100%;
+}
+
+.lightbox-inner img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.btn-lightbox {
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: rgba(255, 0, 0, 0.281);
+    color: #ffffff;
+    position: fixed;
+    bottom: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.btn-lightbox:hover {
+    background-color: rgba(255, 0, 0, 0.534);
+    color: #ffffff;
+}
+
+.lightbox-navigation {
+    position: fixed;
+    top: calc(50% - 60px);
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    display: none;
+}
+
+.lightbox-arrow {
+    text-decoration: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.281);
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.527);
+    color: #000000;
+}
+
+.show .lightbox-navigation,
+.show .btn-lightbox {
+    display: inherit;
+}
