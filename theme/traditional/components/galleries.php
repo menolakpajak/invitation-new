@@ -5,11 +5,13 @@
 function generateImage(array $imgs, string $className)
 {
     $galery_path = "images/galery/";
+    $BIG_HEIGHT = "312/129";
+    $NORMAL_HEIGHT = "151/100";
 
     $galery = <<<GALLERY
     <!-- gallery -->
     
-        <div id="gallery-container" class="overflow-y-auto flex flex-wrap max-w-[30rem] mx-auto">
+        <div id="gallery-container" class="overflow-y-auto flex flex-wrap container mx-auto">
     GALLERY;
 
 
@@ -19,8 +21,8 @@ function generateImage(array $imgs, string $className)
         $path = "$galery_path$img";
 
         if ($i == $lastIndex) {
-            $width = ($i == 4 || $i == 5) ? 66.67 : 33.333;
-            $height = ($i == 3 || $i == 6) ? 129 : 100;
+            $width = ($i == 4 || $i == 5) ? 66 : 33;
+            $height = ($i == 3 || $i == 6) ? $BIG_HEIGHT : $NORMAL_HEIGHT;
 
             $galery .= addImage($path, $width, $height, $className);
             $galery .= <<<END
@@ -30,11 +32,11 @@ function generateImage(array $imgs, string $className)
     </li>
 END;
         } elseif ($i == 3 || $i == 6) {
-            $galery .= addImage($path, 33.333, 129, $className);
+            $galery .= addImage($path, 33, $BIG_HEIGHT, $className);
         } elseif ($i == 4 || $i == 5) {
-            $galery .= addImage($path, 66.67, 129, $className);
+            $galery .= addImage($path, 66, $BIG_HEIGHT, $className);
         } else {
-            $galery .= addImage($path, 33.333, 100, $className);
+            $galery .= addImage($path, 33, $NORMAL_HEIGHT, $className);
         }
     }
 
@@ -48,9 +50,9 @@ FOOTER;
 function addImage($path, $width, $height, $className)
 {
     return <<<HTML
-    <div style="width: $width%; overflow: hidden; padding: 4px" class="animate__animated animate__zoomIn animate__slower">
-        <div style="overflow: hidden; width: 100%; height: {$height}px">
-            <img src="$path" style="width: 100%; height: 100%; object-fit: cover" class="lightbox {$className} object-cover hover:brightness-75 transition-all" loading="lazy"/>
+    <div style="width: $width%; overflow: hidden; padding: 4px">
+        <div style="overflow: hidden; width: 100%; hright: auto; aspect-ratio: $height" class="h-full">
+            <img src="$path" style="width: 100%;" class="lightbox {$className} h-full block object-cover object-[center_center] hover:brightness-75 transition-all" loading="lazy"/>
         </div>
     </div>
     HTML;

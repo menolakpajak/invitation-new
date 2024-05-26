@@ -1,15 +1,21 @@
 const invitationBtn = document.querySelector("#invitation-open");
+const bgm = document.querySelector("[data-bgm]");
+const bgmController = document.querySelector("[data-bgm-controller]");
 
-invitationBtn.addEventListener("click", (e) => {
+invitationBtn.addEventListener("click", openInvitation);
+
+function openInvitation() {
+    if (document.body.classList.contains("open")) return;
     document.body.classList.add("open");
-});
+    bgmController.style.display = "grid";
+    AOS.init();
+    bgm.play();
+}
 
 window.location.hash = "";
 setTimeout(() => {
     window.scrollTo(0, 0);
     window.scroll({ behavior: "smooth", top: 0, left: 0 });
-
-    // AOS.init();
 }, 250);
 
 const countdownElement = document.querySelector(".countdown-wrapper");
@@ -173,3 +179,9 @@ class LightBox {
 }
 
 const lightboxes = [new LightBox("gallery1")];
+
+bgmController.addEventListener("click", (e) => {
+    let isPlayed = !bgm.paused;
+    isPlayed ? bgm.pause() : bgm.play();
+    bgmController.style.animationPlayState = isPlayed ? "paused" : "running";
+});

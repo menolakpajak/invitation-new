@@ -5,7 +5,10 @@ $customProp = "
 --primary-btn: hsl(114, 16%, 49%);
 --primary-btn-active: hsl(114, 16%, 44%);
 --accent: rgb(194, 155, 78);
-"
+";
+
+$editable = true;
+$editableAttr = $editable ? "data-mode='editable'" : "";
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +42,9 @@ $customProp = "
 
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="../css/slick.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="../css/aos.css" /> -->
+    <link rel="stylesheet" type="text/css" href="../css/aos.css" />
     <link rel="stylesheet" href="../css/glightbox.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="../css/tailwind.css">
     <!-- <link rel="stylesheet" href="../aacss/loading.css?versi" />
     <link rel="stylesheet" href="../aacss/animate.min.css?versi" />
@@ -53,7 +57,14 @@ $customProp = "
 
 </head>
 
-<body style="<?= $customProp ?>" class="[&:not(.open)]:overflow-hidden">
+<body <?= $editableAttr ?> style="<?= $customProp ?>" class="[&:not(.open)]:overflow-hidden relative">
+    <?php if ($editable) {
+        include_once "components/editable.php";
+    }
+    ?>
+    <!-- BGM -->
+    <?php include_once "components/music.php"; ?>
+
     <main id="app" class="font-[Alice]">
         <!-- Greet -->
         <?php include "structures/cover.php"; ?>
@@ -82,13 +93,16 @@ $customProp = "
     </main>
 
 
+
     <!-- JS -->
-    <script src="../js/global.js"></script>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/slick.js"></script>
-    <!-- <script type="text/javascript" src="../js/aos.js"></script> -->
+    <script type="text/javascript" src="../js/aos.js"></script>
     <script type="text/javascript" src="../js/glightbox.js"></script>
     <script type="text/javascript" src="../js/boxicon.js"></script>
+
+    <script src="../js/global.js"></script>
+    <script src="../js/editable.js"></script>
     <script>
         $('.cover-carousel').slick({
             infinite: true,

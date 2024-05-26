@@ -13,12 +13,17 @@
         </div>
     </div>
     <div class="flex flex-col font-[Alice] items-center w-full text-white absolute top-[65%] -translate-y-1/2">
-        <h2 class="font-[Modernline] text-5xl tablet:text-3xl leading-relaxed tracking-wider">Komo &amp; Yunitha</h2>
-        <p class="hero_date text-xl">Selasa, 31 Desember 2024</p>
-        <p class="mt-2 text-sm leading-5">Kepada</p>
-        <p class="text-sm leading-5">Bapak/Ibu/Saudara/i</p>
+        <h2 data-editable="cover.mempelai" class="font-[Modernline] text-5xl tablet:text-3xl leading-relaxed tracking-wider">Komo &amp; Yunitha</h2>
+        <p data-editable="cover.tanggal" class="hero_date text-xl">Selasa, 31 Desember 2024</p>
+        <div class="text-center mt-2 text-sm leading-5" data-editable="cover.title">
+            <p>
+                Kepada
+                <br>
+                Bapak/Ibu/Saudara/i
+            </p>
+        </div>
         <h2 class="modal-penerima mt-2 text-2xl">Nama Tamu</h2>
-        <a href="#couple" id="invitation-open" class="btn btn-round mt-4 bg-[var(--primary-btn)] active:bg-[var(--primary-btn-active)] text-xl">Buka Undangan</a>
+        <a data-editable="cover.buka" href="#couple" id="invitation-open" class="btn btn-round mt-4 bg-[var(--primary-btn)] active:bg-[var(--primary-btn-active)] text-xl">Buka Undangan</a>
     </div>
     <?php include "$ROOT_THEME/components/wave.php" ?>
 </section>

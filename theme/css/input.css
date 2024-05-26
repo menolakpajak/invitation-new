@@ -37,11 +37,18 @@
     }
 
     .container {
-        @apply max-w-[min(70rem,100vw)] mx-auto overflow-hidden;
+        @apply max-w-[min(70rem,100vw)] mx-auto;
+    }
+
+    .frame-bg {
+        @apply overflow-hidden;
     }
 }
 
-/* woi jawir */
+[data-aos] {
+    transition-duration: 800ms !important;
+}
+
 body:not(.open) :where(section, footer):not(#cover) {
     display: none !important;
     pointer-events: none;
